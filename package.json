@@ -1,0 +1,46 @@
+{
+  "name": "remon",
+  "version": "0.0.0",
+  "description": "My Project",
+  "esy": {
+    "build": "dune build -p #{self.name}",
+    "release": {
+      "releasedBinaries": [
+        "RemonApp.exe"
+      ]
+    }
+  },
+  "buildDirs": {
+    "test": {
+      "require": [
+        "remon/library"
+      ],
+      "bin": "TestRemon.re as TestRemon.exe"
+    },
+    "library": {},
+    "executable": {
+      "require": [
+        "remon/library"
+      ],
+      "bin": "RemonApp.re as RemonApp.exe"
+    }
+  },
+  "scripts": {
+    "test": "esy x TestRemon.exe",
+    "watch": "esy fswatch test"
+  },
+  "dependencies": {
+    "@opam/dune": "*",
+    "@esy-ocaml/reason": "*",
+    "refmterr": "*",
+    "ocaml": "~4.6.0",
+    "pesy": "*",
+    "esy-fswatch": "*"
+  },
+  "devDependencies": {
+    "@opam/merlin": "*"
+  },
+  "resolutions": {
+    "esy-fswatch": "ulrikstrid/esy-fswatch#6d7c70b"
+  }
+}

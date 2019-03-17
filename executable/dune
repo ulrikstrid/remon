@@ -1,0 +1,2 @@
+(executable (name RemonApp) (public_name RemonApp.exe)
+    (libraries remon.library)) 
